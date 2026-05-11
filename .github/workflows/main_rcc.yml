@@ -63,4 +63,4 @@ jobs:
         with:
           app-name: 'RCC'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1F89E065A1C5495BB2D3176D7EFF8091 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FAB80605B94B415EA86D074E9D0963A0 }}

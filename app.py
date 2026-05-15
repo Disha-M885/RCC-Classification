@@ -1,12 +1,26 @@
 from fastapi import FastAPI, File, UploadFile
+import tensorflow as tf
 from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
 import io
+import os
+import gdown
 
 app = FastAPI()
+#11XxB4c0rpvRJQ0w5yI6VBnr3f4MyOZLe
+MODEL_PATH = "RCC.keras"
 
-model = load_model("RCC.keras", compile=False)
+if not os.path.exists(MODEL_PATH):
+
+    url = "https://drive.google.com/uc?id=11XxB4c0rpvRJQ0w5yI6VBnr3f4MyOZLe"
+
+    gdown.download(url, MODEL_PATH, quiet=False)
+
+model = load_model(
+    MODEL_PATH,
+    compile=False
+)
 
 classes = [
     "Grade-0",
@@ -17,21 +31,15 @@ classes = [
 ]
 
 def preprocess(image):
-    image = image.resize((224, 224))
+    image = image.resize((224,224))
     image = np.array(image) / 255.0
     image = np.expand_dims(image, axis=0)
     return image
 
-@app.get("/")
-def home():
-    return {"message": "RCC API Running"}
-
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
 
-    image = Image.open(
-        io.BytesIO(await file.read())
-    ).convert("RGB")
+    image = Image.open(io.BytesIO(await file.read())).convert("RGB")
 
     img = preprocess(image)
 

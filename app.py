@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyNtJLTfx6clixGYpcy4CYy8",
+      "authorship_tag": "ABX9TyNcQYtPPm+89i+vJSCGa+sX",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -123,7 +123,7 @@
         }
       ],
       "source": [
-        "from pyngrok import ngrok\n",
+        "'''from pyngrok import ngrok\n",
         "import nest_asyncio\n",
         "import uvicorn\n",
         "\n",
@@ -139,13 +139,13 @@
         "config = uvicorn.Config(app, host=\"0.0.0.0\", port=8000)\n",
         "server = uvicorn.Server(config)\n",
         "\n",
-        "await server.serve()"
+        "await server.serve()'''"
       ]
     },
     {
       "cell_type": "code",
       "source": [
-        "!pip install fastapi uvicorn pyngrok python-multipart nest-asyncio"
+        "#!pip install fastapi uvicorn pyngrok python-multipart nest-asyncio"
       ],
       "metadata": {
         "colab": {

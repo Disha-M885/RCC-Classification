@@ -5,3 +5,4 @@ pillow
 numpy
 python-multipart
 h5py
+gdown

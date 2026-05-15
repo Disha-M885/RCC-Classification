@@ -13,7 +13,7 @@ MODEL_PATH = "RCC.keras"
 
 if not os.path.exists(MODEL_PATH):
 
-    url = "https://drive.google.com/uc?id=11XxB4c0rpvRJQ0w5yI6VBnr3f4MyOZLe"
+    url = "https://drive.google.com/uc?id=1gT4CALHrUCPQbV1YlgKRYATqCbLsPqVN"
 
     gdown.download(url, MODEL_PATH, quiet=False)
 

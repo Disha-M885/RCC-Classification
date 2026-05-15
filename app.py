@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyOn2/W3jKQpV+Qb4348x3NM",
+      "authorship_tag": "ABX9TyOkW9s1A71N2XD+4KVi3odU",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -35,9 +35,18 @@
         "from PIL import Image\n",
         "import numpy as np\n",
         "import io\n",
+        "import os\n",
+        "import gdown\n",
         "\n",
         "app = FastAPI()\n",
+        "#11XxB4c0rpvRJQ0w5yI6VBnr3f4MyOZLe\n",
+        "MODEL_PATH = \"RCC.keras\"\n",
         "\n",
+        "if not os.path.exists(MODEL_PATH):\n",
+        "\n",
+        "    url = \"https://drive.google.com/uc?id=11XxB4c0rpvRJQ0w5yI6VBnr3f4MyOZLe\"\n",
+        "\n",
+        "    gdown.download(url, MODEL_PATH, quiet=False)\n",
         "model = load_model(\n",
         "    \"/content/drive/MyDrive/RCC/RCC.keras\",\n",
         "    compile=False\n",

@@ -16,7 +16,7 @@ app = FastAPI()
 FILE_ID = "YOUR_GOOGLE_DRIVE_FILE_ID"
 
 if not os.path.exists("RCC.weights.h5"):
-    url = f"https://drive.google.com/uc?id={FILE_ID}"
+    url = f"https://drive.google.com/uc?id=1LAUzFVeFAtahIUpdeBk7reyt1ZXEhjjY"
     gdown.download(url, "RCC.weights.h5", quiet=False)
 
 # ---------------- BUILD MODEL ----------------
